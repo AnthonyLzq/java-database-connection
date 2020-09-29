@@ -6,18 +6,22 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
 public class MessageDao {
-    public static void createMessage (Message message) {
+    public static boolean createMessage (Message message) {
         PreparedStatement ps;
+        boolean successCode;
         try {
             String query = "INSERT INTO messages (message, author) VALUES (?, ?)";
             ps = Global.psqlConnection.prepareStatement(query);
             ps.setString(1, message.getMessage());
             ps.setString(2, message.getAuthor());
             ps.executeUpdate();
-            System.out.println("\nMessage created successfully!\n\n");
+            successCode = true;
         } catch (SQLException e) {
             e.printStackTrace();
+            successCode = false;
         }
+
+        return successCode;
     }
 
     public static void readMessage () {

@@ -11,7 +11,8 @@ public class MessageService {
         String messageAuthor = sc.nextLine();
 
         Message newMessage = new Message(messageContent, messageAuthor);
-        MessageDao.createMessage(newMessage);
+        boolean success = MessageDao.createMessage(newMessage);
+        if (success) System.out.println("\nMessage created successfully!\n\n");
     }
 
     public static void listMessages () {

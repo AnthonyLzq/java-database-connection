@@ -1,5 +1,10 @@
 # Java Database connection
 
+## Version 0.4.1
+
+- Fixed:
+    - Now Dao object no longer prints anything in the terminal.
+
 ## Version 0.4.0
 
 - Implemented:
