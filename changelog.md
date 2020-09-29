@@ -1,5 +1,10 @@
 # Java Database connection
 
+## Version 0.5.0
+
+- Implemented:
+    - Result class, to have homogenous behaviour in each method of the Dao.
+
 ## Version 0.4.2
 
 - Fixed:

@@ -1,26 +1,25 @@
 package messagesApp.message;
 
 import messagesApp.global.Global;
+import messagesApp.result.Result;
 
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
-import java.util.HashMap;
-import java.util.Map;
 
 public class MessageDao {
-    public static Map<Integer, Boolean> createMessage (Message message) {
+    public static Result createMessage (Message message) {
         PreparedStatement ps;
-        Map<Integer, Boolean> result = new HashMap<Integer, Boolean>();
+        Result result = new Result();
         try {
             String query = "INSERT INTO messages (message, author) VALUES (?, ?)";
             ps = Global.psqlConnection.prepareStatement(query);
             ps.setString(1, message.getMessage());
             ps.setString(2, message.getAuthor());
             ps.executeUpdate();
-            result.put(1, true);
+            result.setSuccess(true);
         } catch (SQLException e) {
             e.printStackTrace();
-            result.put(1, false);
+            result.setSuccess(false);
         }
 
         return result;

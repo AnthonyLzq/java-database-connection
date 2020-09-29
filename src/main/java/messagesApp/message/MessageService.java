@@ -1,6 +1,7 @@
 package messagesApp.message;
 
-import java.util.Map;
+import messagesApp.result.Result;
+
 import java.util.Scanner;
 
 public class MessageService {
@@ -12,8 +13,8 @@ public class MessageService {
         String messageAuthor = sc.nextLine();
 
         Message newMessage = new Message(messageContent, messageAuthor);
-        Map<Integer, Boolean> result = MessageDao.createMessage(newMessage);
-        if (result.get(1)) return "\nMessage created successfully!\n\n";
+        Result result = MessageDao.createMessage(newMessage);
+        if (result.isSuccess()) return "\nMessage created successfully!\n\n";
 
         return "\nThere was an error trying to create the requested message!";
     }
