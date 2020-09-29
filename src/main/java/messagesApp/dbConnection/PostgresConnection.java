@@ -1,6 +1,6 @@
 package messagesApp.dbConnection;
 
-import messagesApp.Configuration.ReadConfig;
+import messagesApp.configuration.ReadConfig;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
