@@ -2,18 +2,17 @@ package messagesApp.message;
 
 public class Message {
     private int idMessage;
-    private String message;
     private String author;
     private String date;
+    private String message;
 
     public Message () {
 
     }
 
-    public Message(String message, String author, String date) {
-        this.message = message;
+    public Message(String author, String message) {
         this.author = author;
-        this.date = date;
+        this.message = message;
     }
 
     public int getIdMessage () {

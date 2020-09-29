@@ -1,5 +1,10 @@
 # Java Database connection
 
+## Version 0.4.0
+
+- Implemented:
+    - Create operation by terminal.
+
 ## Version 0.3.0
 
 - Implemented:

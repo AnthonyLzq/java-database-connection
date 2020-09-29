@@ -1,15 +1,15 @@
 package messagesApp;
 
 import messagesApp.dbConnection.PostgresConnection;
+import messagesApp.global.Global;
 import messagesApp.message.MessageService;
 
-import java.sql.Connection;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        PostgresConnection.getConnection();
+        Global.psqlConnection = PostgresConnection.getConnection();
         int option = 0;
         do {
             System.out.println("Messages application");
