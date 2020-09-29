@@ -1,5 +1,11 @@
 # Java Database connection
 
+## Version 0.4.2
+
+- Fixed:
+    - Now Deo object returns a `Map` to handle the success or failure in the service.
+    - The service return a message to the main class, so it can be displayed to the user.
+
 ## Version 0.4.1
 
 - Fixed:

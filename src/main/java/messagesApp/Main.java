@@ -10,6 +10,7 @@ public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         Global.psqlConnection = PostgresConnection.getConnection();
+        String result;
         int option = 0;
         do {
             System.out.println("Messages application");
@@ -23,7 +24,8 @@ public class Main {
 
             switch (option) {
                 case 1:
-                    MessageService.createMessage();
+                    result = MessageService.createMessage();
+                    System.out.println(result);
                     break;
                 case 2:
                     MessageService.listMessages();
