@@ -1,5 +1,11 @@
 # Java Database connection
 
+## Version 0.6.0
+
+- Implemented:
+    - Read operation by terminal.
+    - Code refactoring.
+
 ## Version 0.5.0
 
 - Implemented:

@@ -6,7 +6,7 @@ public class Message {
     private String date;
     private String message;
 
-    public Message () {
+    public Message() {
 
     }
 
@@ -15,35 +15,52 @@ public class Message {
         this.message = message;
     }
 
-    public int getIdMessage () {
-        return idMessage;
-    }
-
-    public void setIdMessage (int idMessage) {
+    public Message(int idMessage, String author, String date, String message) {
         this.idMessage = idMessage;
-    }
-
-    public String getMessage () {
-        return message;
-    }
-
-    public void setMessage (String message) {
+        this.author = author;
+        this.date = date;
         this.message = message;
     }
 
-    public String getAuthor () {
+    public int getIdMessage() {
+        return idMessage;
+    }
+
+    public void setIdMessage(int idMessage) {
+        this.idMessage = idMessage;
+    }
+
+    public String getMessage() {
+        return message;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
+    }
+
+    public String getAuthor() {
         return author;
     }
 
-    public void setAuthor (String author) {
+    public void setAuthor(String author) {
         this.author = author;
     }
 
-    public String getDate () {
+    public String getDate() {
         return date;
     }
 
-    public void setDate (String date) {
+    public void setDate(String date) {
         this.date = date;
+    }
+
+    @Override
+    public String toString() {
+        return "{" +
+                "\n\tid: " + getIdMessage() + "," +
+                "\n\tauthor: " + getAuthor() + "," +
+                "\n\tmessage: " + getMessage() + "," +
+                "\n\tcreationDate: " + getDate() +
+                "\n}";
     }
 }

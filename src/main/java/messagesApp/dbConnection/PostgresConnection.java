@@ -8,7 +8,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 public class PostgresConnection {
-    public static Connection getConnection () {
+    public static Connection getConnection() {
         Connection connection = null;
         try {
             ArrayList<String> properties = ReadConfig.getPropValues();
@@ -17,7 +17,7 @@ public class PostgresConnection {
              * properties[1]: user
              * properties[2]: password
              */
-            connection = DriverManager.getConnection(properties.get(0),properties.get(1),properties.get(2));
+            connection = DriverManager.getConnection(properties.get(0), properties.get(1), properties.get(2));
             if (connection != null) System.out.println("Connection established");
         } catch (SQLException throwable) {
             throwable.printStackTrace();

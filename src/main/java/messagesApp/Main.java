@@ -28,7 +28,8 @@ public class Main {
                     System.out.println(result);
                     break;
                 case 2:
-                    MessageService.listMessages();
+                    result = MessageService.listMessages();
+                    System.out.println(result);
                     break;
                 case 3:
                     MessageService.updateMessage();
@@ -39,6 +40,6 @@ public class Main {
                 default:
                     break;
             }
-        } while(option != 5);
+        } while (option != 5);
     }
 }

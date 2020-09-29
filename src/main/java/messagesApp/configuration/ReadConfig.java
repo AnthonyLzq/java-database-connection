@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.Properties;
 
 public class ReadConfig {
-    public static ArrayList<String> getPropValues () {
+    public static ArrayList<String> getPropValues() {
         ArrayList<String> propertiesList = new ArrayList<String>();
         try {
             Properties properties = new Properties();
@@ -14,7 +14,8 @@ public class ReadConfig {
             InputStream inputStream = ReadConfig.class.getClassLoader().getResourceAsStream(propertiesFileName);
 
             if (inputStream != null) properties.load(inputStream);
-            else throw new FileNotFoundException("Property file: "+propertiesFileName+" not found in the classpath.");
+            else
+                throw new FileNotFoundException("Property file: " + propertiesFileName + " not found in the classpath.");
 
             for (int i = 0; i < 3; i++) {
                 propertiesList.add(properties.getProperty("url"));
