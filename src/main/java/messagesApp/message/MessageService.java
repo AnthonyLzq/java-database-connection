@@ -28,7 +28,7 @@ public class MessageService {
 
     public static String deleteMessage() {
         Scanner sc = new Scanner(System.in);
-        System.out.print("Enter the id of the message you want ot delete: ");
+        System.out.print("Enter the id of the message you want to delete: ");
         int id = sc.nextInt();
         MessageResult messageResult = MessageDao.deleteMessage(id);
 
@@ -38,6 +38,21 @@ public class MessageService {
         return "\nThere was an error trying to deleted the requested message!";
     }
 
-    public static void updateMessage() {
+    public static String updateMessage() {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter the id of the message you want to update: ");
+        int id = sc.nextInt();
+        sc.nextLine();
+        System.out.print("Enter the new message: ");
+        String newMessageContent = sc.nextLine();
+        System.out.print("Enter the new author: ");
+        String newAuthor = sc.nextLine();
+        Message message = new Message(id, newMessageContent, newAuthor);
+        MessageResult messageResult = MessageDao.updateMessage(message);
+
+        if (messageResult.isSuccess()) return "\nMessage updated successfully";
+        if (messageResult.getUpdatedRow() == 0) return "\nThe message was not found!\n\n";
+
+        return "\nThere was an error trying to update th requested message";
     }
 }

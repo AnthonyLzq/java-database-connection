@@ -36,7 +36,8 @@ public class Main {
                     System.out.println(result);
                     break;
                 case 4:
-                    MessageService.updateMessage();
+                    result = MessageService.updateMessage();
+                    System.out.println(result);
                     break;
                 default:
                     break;

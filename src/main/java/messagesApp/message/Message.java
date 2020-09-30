@@ -15,6 +15,12 @@ public class Message {
         this.message = message;
     }
 
+    public Message(int idMessage, String author, String message) {
+        this.idMessage = idMessage;
+        this.author = author;
+        this.message = message;
+    }
+
     public Message(int idMessage, String author, String date, String message) {
         this.idMessage = idMessage;
         this.author = author;

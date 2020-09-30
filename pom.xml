@@ -6,7 +6,7 @@
 
     <groupId>org.example</groupId>
     <artifactId>java_db_connection</artifactId>
-    <version>0.7.0</version>
+    <version>0.8.0</version>
     <dependencies>
         <!-- https://mvnrepository.com/artifact/postgresql/postgresql -->
         <dependency>

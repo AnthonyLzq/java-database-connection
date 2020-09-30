@@ -18,6 +18,7 @@ public class MessageDao {
             ps.setString(1, message.getMessage());
             ps.setString(2, message.getAuthor());
             ps.executeUpdate();
+
             messageResult.setSuccess(true);
         } catch (SQLException e) {
             e.printStackTrace();
@@ -66,6 +67,7 @@ public class MessageDao {
             ps = Global.psqlConnection.prepareStatement(query);
             ps.setInt(1, idMessage);
             int rowUpdated = ps.executeUpdate();
+
             messageResult.setDeletedRow(rowUpdated);
             messageResult.setSuccess(messageResult.getDeletedRow() == 1);
         } catch (SQLException e) {
@@ -76,6 +78,24 @@ public class MessageDao {
         return messageResult;
     }
 
-    public static void updateMessage(Message message) {
+    public static MessageResult updateMessage(Message message) {
+        PreparedStatement ps;
+        MessageResult messageResult = new MessageResult();
+        try {
+            String query = "UPDATE messages SET message=?, author=? WHERE id=?";
+            ps = Global.psqlConnection.prepareStatement(query);
+            ps.setString(1, message.getMessage());
+            ps.setString(2, message.getAuthor());
+            ps.setInt(3, message.getIdMessage());
+            int rowUpdated = ps.executeUpdate();
+
+            messageResult.setUpdatedRow(rowUpdated);
+            messageResult.setSuccess(messageResult.getUpdatedRow() == 1);
+        } catch (SQLException e) {
+            e.printStackTrace();
+            messageResult.setSuccess(false);
+        }
+
+        return messageResult;
     }
 }
