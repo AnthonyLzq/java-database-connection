@@ -1,5 +1,10 @@
 # Java Database connection
 
+## Version 0.9.0
+
+- Implemented:
+    - Update `.gitignore` file.
+
 ## Version 0.8.0
 
 - Implemented:
