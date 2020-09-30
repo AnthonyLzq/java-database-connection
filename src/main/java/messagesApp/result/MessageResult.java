@@ -6,6 +6,7 @@ import java.util.ArrayList;
 
 
 public class MessageResult {
+    private int deletedRow;
     private boolean success;
     private ArrayList<Message> rows;
 
@@ -36,6 +37,14 @@ public class MessageResult {
 
     public void setRows(ArrayList<Message> rows) {
         this.rows = rows;
+    }
+
+    public int getDeletedRow() {
+        return deletedRow;
+    }
+
+    public void setDeletedRow(int deletedRow) {
+        this.deletedRow = deletedRow;
     }
 
     @Override

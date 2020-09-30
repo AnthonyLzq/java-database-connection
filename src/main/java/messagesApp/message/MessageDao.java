@@ -58,7 +58,22 @@ public class MessageDao {
         return messageResult;
     }
 
-    public static void deleteMessage(int idMessage) {
+    public static MessageResult deleteMessage(int idMessage) {
+        PreparedStatement ps;
+        MessageResult messageResult = new MessageResult();
+        try {
+            String query = "DELETE FROM messages WHERE id=?";
+            ps = Global.psqlConnection.prepareStatement(query);
+            ps.setInt(1, idMessage);
+            int rowUpdated = ps.executeUpdate();
+            messageResult.setDeletedRow(rowUpdated);
+            messageResult.setSuccess(messageResult.getDeletedRow() == 1);
+        } catch (SQLException e) {
+            e.printStackTrace();
+            messageResult.setSuccess(false);
+        }
+
+        return messageResult;
     }
 
     public static void updateMessage(Message message) {

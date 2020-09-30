@@ -16,8 +16,8 @@ public class Main {
             System.out.println("Messages application");
             System.out.println("1. Create message");
             System.out.println("2. List messages");
-            System.out.println("3. Update message");
-            System.out.println("4. Delete message");
+            System.out.println("3. Delete message");
+            System.out.println("4. Update message");
             System.out.println("5. Exit");
             System.out.print("Select option: ");
             option = sc.nextInt();
@@ -32,10 +32,11 @@ public class Main {
                     System.out.println(result);
                     break;
                 case 3:
-                    MessageService.updateMessage();
+                    result = MessageService.deleteMessage();
+                    System.out.println(result);
                     break;
                 case 4:
-                    MessageService.deleteMessage();
+                    MessageService.updateMessage();
                     break;
                 default:
                     break;
